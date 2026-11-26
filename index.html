@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GREENCRAFT | Sustainable Furniture</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 :root{--green:#183d2b;--light:#eaf1e7;--cream:#faf8f0;--accent:#a6bd83;--dark:#18251c}
@@ -16,7 +17,7 @@ nav a:hover{color:var(--accent)}
 .hero-content{max-width:700px}
 .hero h1{font-size:clamp(38px,6vw,65px);line-height:1.1;margin-bottom:22px}
 .hero p{font-size:18px;margin-bottom:25px}
-.btn{display:inline-block;background:var(--accent);color:#142719;padding:13px 25px;border-radius:30px;text-decoration:none;font-weight:bold}
+.btn{display:inline-block;background:var(--accent);color:#142719;padding:13px 25px;border-radius:30px;text-decoration:none;font-weight:bold;margin:5px}
 section{padding:75px 8%}
 .section-title{text-align:center;margin-bottom:40px}
 .section-title h2{font-size:34px;color:var(--green)}
@@ -34,9 +35,9 @@ section{padding:75px 8%}
 .gallery img{width:100%;height:260px;object-fit:cover;display:block;transition:.4s}
 .gallery img:hover{transform:scale(1.04)}
 .gallery-item p{padding:14px;font-weight:bold;color:var(--green)}
-.video-box{max-width:900px;margin:auto;background:#fff;padding:15px;border-radius:16px;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+.video-box,.assembly-box{max-width:900px;margin:auto;background:white;padding:20px;border-radius:16px;box-shadow:0 5px 18px rgba(0,0,0,.08);text-align:center}
 .video-box video{width:100%;max-height:520px;border-radius:10px;background:#111}
-.video-box p{text-align:center;padding:12px}
+.assembly-icon{font-size:75px;margin:15px}
 .process-number{width:45px;height:45px;background:var(--green);color:white;border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:bold;margin-bottom:15px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;text-align:center}
 .stat{background:var(--green);color:white;padding:25px;border-radius:12px}
@@ -49,6 +50,7 @@ footer{background:#10281b;color:white;text-align:center;padding:30px 15px}
 @media(max-width:650px){header{justify-content:center}nav{text-align:center}.hero{padding:75px 7%;min-height:500px}section{padding:55px 6%}}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -59,8 +61,8 @@ footer{background:#10281b;color:white;text-align:center;padding:30px 15px}
 <a href="#design">Design</a>
 <a href="#gallery">Gallery</a>
 <a href="#video">Video</a>
+<a href="#assembly">3D Assembly</a>
 <a href="#materials">Materials</a>
-<a href="#assembly">Assembly</a>
 <a href="#future">Future Scope</a>
 </nav>
 </header>
@@ -74,10 +76,7 @@ footer{background:#10281b;color:white;text-align:center;padding:30px 15px}
 </div>
 
 <section id="about">
-<div class="section-title">
-<h2>About Our Project</h2>
-<p>Innovation through reuse and sustainable design</p>
-</div>
+<div class="section-title"><h2>About Our Project</h2><p>Innovation through reuse and sustainable design</p></div>
 <div class="about-grid">
 <img src="furniture2.jpeg" alt="Sustainable cardboard furniture">
 <div class="content">
@@ -114,10 +113,7 @@ footer{background:#10281b;color:white;text-align:center;padding:30px 15px}
 </section>
 
 <section class="light" id="gallery">
-<div class="section-title">
-<h2>Our Project Photo Gallery</h2>
-<p>Five views of our sustainable furniture project</p>
-</div>
+<div class="section-title"><h2>Our Project Photo Gallery</h2><p>Five views of our sustainable furniture project</p></div>
 <div class="gallery">
 <div class="gallery-item"><img src="furniture1.jpeg" alt="Project photo 1"><p>Project View 01</p></div>
 <div class="gallery-item"><img src="furniture2.jpeg" alt="Project photo 2"><p>Project View 02</p></div>
@@ -128,16 +124,30 @@ footer{background:#10281b;color:white;text-align:center;padding:30px 15px}
 </section>
 
 <section id="video">
-<div class="section-title">
-<h2>Project Video Demonstration</h2>
-<p>Watch our furniture project in action</p>
-</div>
+<div class="section-title"><h2>Project Video Demonstration</h2><p>Watch our furniture project in action</p></div>
 <div class="video-box">
 <video controls preload="metadata">
 <source src="furniture6.mp4" type="video/mp4">
-Your browser does not support this video. Please check the video file.
+Your browser does not support this video.
 </video>
 <p><strong>GREENCRAFT – Sustainable Foldable Furniture Demonstration</strong></p>
+</div>
+</section>
+
+<section class="light" id="assembly">
+<div class="section-title">
+<h2>SolidWorks 3D Assembly</h2>
+<p>Computer-aided design and assembly documentation</p>
+</div>
+<div class="assembly-box">
+<div class="assembly-icon">🧩</div>
+<h3>Sustainable Furniture – SolidWorks Assembly</h3>
+<p>Explore the engineering design file created using SolidWorks. The assembly file contains the furniture components and their arrangement in the designed model.</p>
+<p><strong>File format:</strong> SLDASM</p>
+<p><strong>File name:</strong> sustainable furniture.SLDASM</p>
+<p style="margin:20px 0">Download the assembly file to open it using compatible SolidWorks software.</p>
+<a class="btn" href="sustainable%20furniture.SLDASM" download>Download 3D Assembly</a>
+<p style="font-size:13px;margin-top:18px">Note: A compatible SolidWorks installation and the referenced component files may be required to open the complete assembly.</p>
 </div>
 </section>
 
@@ -151,7 +161,7 @@ Your browser does not support this video. Please check the video file.
 </div>
 </section>
 
-<section class="light" id="assembly">
+<section class="light" id="assembly-process">
 <div class="section-title"><h2>Manufacturing and Assembly Process</h2><p>From discarded cardboard to useful furniture</p></div>
 <div class="cards">
 <div class="card"><div class="process-number">1</div><h3>Collection</h3><p>Collect clean, dry and reusable hard cardboard sheets.</p></div>
