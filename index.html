@@ -4,9 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GREENCRAFT | Foldable Sustainable Furniture</title>
+<title>GREENCRAFT | Sustainable Furniture Innovation</title>
+
+<meta name="description" content="GREENCRAFT is an innovative sustainable furniture project transforming discarded hard cardboard into functional foldable storage furniture.">
 
 <style>
+:root {
+  --green: #173d2a;
+  --green2: #28583b;
+  --lightgreen: #dcebd1;
+  --cream: #f7f6ef;
+  --white: #ffffff;
+  --text: #26392d;
+  --muted: #68766b;
+  --gold: #c8a96b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,240 +29,589 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f7f8f1;
-  color: #253b2d;
-  line-height: 1.7;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.75;
 }
 
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 88%;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.eyebrow {
+  color: #638c55;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.section-title {
+  font-size: clamp(30px, 4vw, 43px);
+  color: var(--green);
+  line-height: 1.2;
+  margin: 12px 0 20px;
+}
+
+.section-intro {
+  max-width: 780px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center .section-intro {
+  margin: auto;
+}
+
+/* NAVIGATION */
+
 header {
-  background: #173d2a;
+  background: var(--green);
   color: white;
-  padding: 18px 7%;
+  padding: 17px 6%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
+  box-shadow: 0 3px 15px #0002;
 }
 
 .logo {
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #c9dfa9;
 }
 
 nav {
   display: flex;
+  gap: 19px;
   flex-wrap: wrap;
-  gap: 15px;
 }
 
 nav a {
   color: white;
-  text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
+  transition: .3s;
 }
 
 nav a:hover {
-  color: #c9e5a9;
+  color: #c9dfa9;
 }
 
+/* HERO */
+
 .hero {
-  min-height: 540px;
-  background: linear-gradient(120deg, #173d2a, #557b4c);
+  min-height: 620px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  background:
+    linear-gradient(110deg, rgba(14,44,28,.96), rgba(28,75,44,.77)),
+    url("https://images.unsplash.com/photo-1449247709967-d4461a6a6103?auto=format&fit=crop&w=1800&q=85");
+  background-position: center;
+  background-size: cover;
   color: white;
-  padding: 70px 20px;
 }
 
 .hero-content {
   max-width: 850px;
+  padding: 100px 0;
+}
+
+.hero-label {
+  color: #d5e8bb;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 13px;
 }
 
 .hero h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 22px;
+  font-size: clamp(43px, 7vw, 78px);
+  line-height: 1.08;
+  margin: 25px 0;
+}
+
+.hero h1 span {
+  color: #cce3a8;
 }
 
 .hero p {
+  max-width: 680px;
   font-size: 19px;
+  color: #e5eee4;
 }
 
 .btn {
   display: inline-block;
-  background: #d8e9bf;
-  color: #173d2a;
-  padding: 13px 28px;
-  margin-top: 25px;
-  border-radius: 30px;
-  text-decoration: none;
+  margin-top: 30px;
+  padding: 14px 30px;
+  background: #d9e9c5;
+  color: var(--green);
   font-weight: bold;
+  border-radius: 5px;
+  transition: .3s;
 }
 
-section {
-  padding: 75px 8%;
+.btn:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.hero-note {
+  margin-top: 55px;
+  color: #d7e4d4;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* STATS */
+
+.stats {
+  background: var(--green);
+  color: white;
+  padding: 35px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
   text-align: center;
 }
 
-.section-heading {
-  font-size: 34px;
-  color: #245436;
-  margin-bottom: 15px;
+.stat h3 {
+  font-size: 29px;
+  color: #d5e8bb;
 }
 
-.intro {
-  max-width: 850px;
-  margin: 0 auto 30px;
+.stat p {
+  font-size: 13px;
+  color: #e1e9df;
+}
+
+/* ABOUT */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-image {
+  min-height: 370px;
+  background: #e5e9df;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 370px;
+  object-fit: cover;
+}
+
+.about-points {
+  margin-top: 25px;
+}
+
+.about-point {
+  border-left: 3px solid #789a62;
+  padding: 5px 0 5px 17px;
+  margin: 15px 0;
+}
+
+.about-point h3 {
+  color: var(--green);
   font-size: 17px;
 }
 
-.about {
-  background: white;
+/* PROBLEM */
+
+.problem {
+  background: #e9efe3;
 }
 
-.highlight {
-  color: #477c46;
-  font-weight: bold;
-}
-
-.grid {
+.problem-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
-  margin-top: 35px;
+  margin-top: 40px;
 }
 
-.card {
+.problem-card {
   background: white;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.09);
-  padding-bottom: 22px;
+  padding: 35px;
+  border-radius: 10px;
 }
 
-.card img {
-  width: 100%;
-  height: 260px;
-  object-fit: contain;
-  background: #edf0e8;
-  display: block;
+.problem-card .symbol {
+  font-size: 36px;
 }
 
-.card h3 {
-  color: #245436;
-  padding: 15px 15px 5px;
+.problem-card h3 {
+  color: var(--green);
+  margin: 12px 0;
 }
 
-.card p {
-  padding: 0 18px;
+/* PRODUCT DESIGN */
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+  margin-top: 40px;
 }
 
-.design {
-  background: #e9f0e3;
-}
-
-.material {
+.design-card {
   background: white;
-  padding: 25px;
+  padding: 30px;
+  border-radius: 10px;
+  border-bottom: 4px solid #8da879;
+  box-shadow: 0 5px 18px #0000000a;
+}
+
+.design-card .icon {
+  font-size: 35px;
+}
+
+.design-card h3 {
+  color: var(--green);
+  margin: 12px 0;
+}
+
+/* GALLERY */
+
+.gallery-section {
+  background: #e9efe3;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.gallery-card {
+  background: white;
   border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px #0001;
 }
 
-.material span {
-  font-size: 38px;
+.gallery-card img {
+  width: 100%;
+  height: 390px;
+  display: block;
+  object-fit: contain;
+  background: #dce3d6;
 }
 
-.material h3 {
-  color: #245436;
-  margin: 10px 0;
+.gallery-card div {
+  padding: 22px;
 }
 
-.process {
+.gallery-card h3 {
+  color: var(--green);
+}
+
+/* MATERIALS */
+
+.material-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.material-card {
+  padding: 28px;
   background: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 18px #0000000a;
+}
+
+.material-card .icon {
+  font-size: 37px;
+}
+
+.material-card h3 {
+  color: var(--green);
+  margin: 12px 0;
+}
+
+/* ASSEMBLY */
+
+.assembly {
+  background: #e9efe3;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
 }
 
 .step {
-  background: #f0f4eb;
-  padding: 25px;
-  border-radius: 12px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
   text-align: left;
-}
-
-.step h3 {
-  color: #245436;
-  margin-bottom: 8px;
 }
 
 .step-number {
-  font-size: 27px;
+  font-size: 30px;
+  color: #75965e;
   font-weight: bold;
-  color: #638d51;
 }
 
-.advantages {
-  background: #e9f0e3;
+.step h3 {
+  color: var(--green);
+  margin: 8px 0;
 }
 
-.advantages ul {
-  list-style: none;
-  max-width: 800px;
-  margin: 30px auto;
-  text-align: left;
+/* FOLDING */
+
+.folding-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  margin-top: 35px;
 }
 
-.advantages li {
+.folding-card {
   background: white;
-  margin: 12px 0;
-  padding: 15px 20px;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 35px;
+  box-shadow: 0 5px 20px #0001;
 }
+
+.folding-card h3 {
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+/* SPECIFICATIONS */
+
+.specifications {
+  background: var(--green);
+  color: white;
+}
+
+.specifications .section-title {
+  color: white;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.spec-card {
+  background: #28583b;
+  padding: 25px;
+  border-radius: 9px;
+}
+
+.spec-card h3 {
+  color: #d5e8bb;
+  margin-bottom: 7px;
+}
+
+/* SOLIDWORKS */
 
 .model {
-  background: #173d2a;
-  color: white;
-}
-
-.model h2 {
-  color: white;
+  background: #f7f6ef;
 }
 
 .model-box {
-  max-width: 850px;
-  margin: 30px auto;
-  background: #f4f5ef;
-  color: #263b2b;
-  padding: 40px 20px;
-  border-radius: 15px;
+  margin-top: 40px;
+  padding: 65px 25px;
+  border: 2px dashed #78936d;
+  border-radius: 12px;
+  background: #edf1e9;
+  text-align: center;
+}
+
+.model-box .model-icon {
+  font-size: 65px;
+}
+
+.model-box h3 {
+  color: var(--green);
+  font-size: 25px;
+  margin: 15px;
 }
 
 .model-box p {
-  margin: 10px;
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
 }
+
+/* ADVANTAGES */
+
+.benefits {
+  background: #e9efe3;
+}
+
+.benefit-list {
+  max-width: 850px;
+  margin: 35px auto;
+  text-align: left;
+}
+
+.benefit-item {
+  background: white;
+  padding: 18px 22px;
+  border-radius: 7px;
+  margin: 12px 0;
+}
+
+/* APPLICATIONS */
+
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 35px;
+}
+
+.application {
+  background: white;
+  padding: 25px 15px;
+  border-radius: 9px;
+}
+
+.application span {
+  font-size: 32px;
+}
+
+.application h3 {
+  color: var(--green);
+  margin-top: 10px;
+}
+
+/* FUTURE */
 
 .future {
-  background: white;
+  background: #e9efe3;
 }
+
+.future-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+/* CONCLUSION */
 
 .conclusion {
-  background: #e9f0e3;
-}
-
-footer {
-  background: #173d2a;
+  background: var(--green);
   color: white;
   text-align: center;
-  padding: 30px 15px;
 }
 
-@media(max-width:650px) {
+.conclusion .section-title {
+  color: white;
+}
+
+.conclusion p {
+  max-width: 850px;
+  margin: auto;
+  font-size: 18px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #102d1e;
+  color: white;
+  padding: 45px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 35px;
+}
+
+footer h3 {
+  color: #d5e8bb;
+  margin-bottom: 15px;
+}
+
+footer a {
+  color: #e3ebdf;
+  display: block;
+  margin: 7px 0;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #ffffff33;
+  margin-top: 35px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #d3dfd0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+  .about-grid,
+  .folding-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .design-grid,
+  .material-grid,
+  .steps,
+  .future-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .application-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:600px) {
   header {
     justify-content: center;
-    gap: 15px;
   }
 
   nav {
@@ -257,16 +619,39 @@ footer {
     gap: 12px;
   }
 
-  .hero h1 {
-    font-size: 35px;
+  nav a {
+    font-size: 11px;
   }
 
-  section {
-    padding: 55px 6%;
+  .hero {
+    min-height: 520px;
   }
 
-  .section-heading {
-    font-size: 28px;
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-grid,
+  .gallery,
+  .design-grid,
+  .material-grid,
+  .steps,
+  .spec-grid,
+  .future-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card img {
+    height: 300px;
+  }
+
+  .application-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    padding: 60px 0;
   }
 }
 </style>
@@ -274,449 +659,428 @@ footer {
 
 <body>
 
+<!-- NAVIGATION -->
+
 <header>
-  <div class="logo">🌿 GREENCRAFT</div>
+  <div class="logo">🌿 GREEN<span>CRAFT</span></div>
 
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#problem">Problem</a>
     <a href="#design">Design</a>
     <a href="#gallery">Gallery</a>
     <a href="#materials">Materials</a>
     <a href="#assembly">Assembly</a>
     <a href="#model">3D Model</a>
-    <a href="#future">Future Scope</a>
+    <a href="#future">Future</a>
   </nav>
 </header>
 
-<!-- HOME -->
+<!-- HERO -->
 
-<div class="hero" id="home">
-  <div class="hero-content">
-    <h1>GREENCRAFT</h1>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
 
-    <h2 style="color:#d8e9bf;">
-      Foldable Sustainable Furniture
-    </h2>
+      <div class="hero-label">
+        SUSTAINABLE DESIGN • CREATIVE ENGINEERING
+      </div>
 
-    <p>
-      Transforming waste cardboard into useful,
-      affordable and innovative furniture.
-      Designing a greener future through creativity,
-      recycling and sustainable engineering.
-    </p>
+      <h1>
+        Turning Waste Into
+        <span>Wonderful Design.</span>
+      </h1>
 
-    <a href="#design" class="btn">
-      Explore Our Project
-    </a>
+      <p>
+        An innovative foldable furniture concept
+        that transforms discarded hard cardboard
+        into useful, affordable and portable
+        storage solutions.
+      </p>
+
+      <a href="#design" class="btn">
+        DISCOVER OUR PROJECT →
+      </a>
+
+      <div class="hero-note">
+        REUSE MATERIALS. REDUCE WASTE. REIMAGINE FURNITURE.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+
+<div class="stats">
+  <div class="container stats-grid">
+
+    <div class="stat">
+      <h3>01</h3>
+      <p>Creative Product Concept</p>
+    </div>
+
+    <div class="stat">
+      <h3>100%</h3>
+      <p>Focus on Material Reuse</p>
+    </div>
+
+    <div class="stat">
+      <h3>∞</h3>
+      <p>Possibilities for Innovation</p>
+    </div>
+
   </div>
 </div>
 
 <!-- ABOUT -->
 
-<section class="about" id="about">
-  <h2 class="section-heading">About Our Project</h2>
+<section class="section" id="about">
+  <div class="container about-grid">
 
-  <p class="intro">
-    GREENCRAFT is an innovative sustainable furniture
-    project focused on converting discarded hard cardboard
-    into functional and foldable storage furniture.
-    Instead of allowing usable cardboard to become waste,
-    our concept explores how it can be redesigned into
-    practical products for everyday use.
-  </p>
+    <div>
+      <div class="eyebrow">THE IDEA BEHIND GREENCRAFT</div>
 
-  <p class="intro">
-    Our main concept is a <span class="highlight">
-    foldable cardboard storage rack</span> that can be
-    used to organize lightweight household items,
-    stationery, books and other suitable objects.
-    The design aims to combine simple construction,
-    portability, affordability and responsible use
-    of materials.
-  </p>
+      <h2 class="section-title">
+        A New Life for Old Cardboard
+      </h2>
 
-  <p class="intro">
-    Through this project, we want to demonstrate that
-    waste materials can become valuable resources
-    when supported by creative thinking and proper design.
-  </p>
+      <p class="section-intro">
+        GREENCRAFT is a sustainable furniture innovation
+        project that explores the conversion of discarded
+        hard cardboard into practical furniture.
+      </p>
+
+      <p class="section-intro" style="margin-top:18px;">
+        Our main product concept is a foldable storage rack.
+        It is intended to provide a convenient way to organize
+        lightweight objects while encouraging the reuse of
+        materials that might otherwise be thrown away.
+      </p>
+
+      <div class="about-points">
+
+        <div class="about-point">
+          <h3>Responsible Material Selection</h3>
+          <p>Giving suitable discarded cardboard another purpose.</p>
+        </div>
+
+        <div class="about-point">
+          <h3>Practical Product Design</h3>
+          <p>Combining storage utility with a foldable structure.</p>
+        </div>
+
+        <div class="about-point">
+          <h3>Creative Engineering</h3>
+          <p>Exploring simple construction and innovative connections.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="about-image">
+      <img src="furniture1.jpeg" alt="GREENCRAFT furniture project">
+    </div>
+
+  </div>
+</section>
+
+<!-- PROBLEM -->
+
+<section class="section problem" id="problem">
+  <div class="container">
+
+    <div class="center">
+      <div class="eyebrow">WHY THIS PROJECT MATTERS</div>
+      <h2 class="section-title">The Problem We Want to Address</h2>
+
+      <p class="section-intro">
+        Cardboard packaging is commonly discarded after
+        its original purpose has been completed. At the
+        same time, many storage products require new
+        materials and manufacturing resources.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+
+      <div class="problem-card">
+        <div class="symbol">📦</div>
+        <h3>Cardboard Waste</h3>
+        <p>
+          Used cardboard boxes and packaging can become
+          unnecessary waste when they are not reused
+          or recycled appropriately.
+        </p>
+      </div>
+
+      <div class="problem-card">
+        <div class="symbol">🌍</div>
+        <h3>Resource Consumption</h3>
+        <p>
+          Manufacturing new products requires materials,
+          energy and other resources. Reusing existing
+          materials can help reduce the demand for new inputs.
+        </p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- DESIGN -->
 
-<section class="design" id="design">
-  <h2 class="section-heading">Our Product Design</h2>
+<section class="section" id="design">
+  <div class="container">
 
-  <p class="intro">
-    The proposed product is a foldable rack manufactured
-    using reused corrugated or hard cardboard. Its structure
-    is designed to provide storage space while making the
-    furniture easier to move, fold and store when not required.
-  </p>
+    <div class="eyebrow">PRODUCT DEVELOPMENT</div>
+    <h2 class="section-title">Introducing the Foldable Rack</h2>
 
-  <div class="grid">
+    <p class="section-intro">
+      The proposed rack uses hard cardboard panels
+      arranged into a storage structure. Its foldable
+      concept is intended to make transportation and
+      storage easier when the product is not in use.
+    </p>
 
-    <div class="material">
-      <span>🪑</span>
-      <h3>Foldable Structure</h3>
-      <p>
-        A design concept that allows the rack to be folded
-        for convenient storage and transportation.
-      </p>
+    <div class="design-grid">
+
+      <div class="design-card">
+        <div class="icon">🔄</div>
+        <h3>Foldable Structure</h3>
+        <p>
+          A folding arrangement designed to make the
+          rack easier to store and transport.
+        </p>
+      </div>
+
+      <div class="design-card">
+        <div class="icon">📚</div>
+        <h3>Storage Function</h3>
+        <p>
+          Suitable for organizing lightweight stationery,
+          books and household accessories, subject to testing.
+        </p>
+      </div>
+
+      <div class="design-card">
+        <div class="icon">♻️</div>
+        <h3>Material Reuse</h3>
+        <p>
+          Uses suitable discarded hard cardboard
+          as the main construction material.
+        </p>
+      </div>
+
+      <div class="design-card">
+        <div class="icon">🪶</div>
+        <h3>Lightweight Concept</h3>
+        <p>
+          A lightweight alternative concept for
+          small storage applications.
+        </p>
+      </div>
+
+      <div class="design-card">
+        <div class="icon">🧩</div>
+        <h3>Simple Components</h3>
+        <p>
+          Panels, shelves and connecting elements
+          are planned around simple construction.
+        </p>
+      </div>
+
+      <div class="design-card">
+        <div class="icon">🎨</div>
+        <h3>Custom Appearance</h3>
+        <p>
+          Can be decorated and customized
+          according to user preferences.
+        </p>
+      </div>
+
     </div>
-
-    <div class="material">
-      <span>📦</span>
-      <h3>Reused Cardboard</h3>
-      <p>
-        Uses discarded cardboard sheets and packaging
-        material as the primary construction resource.
-      </p>
-    </div>
-
-    <div class="material">
-      <span>🏠</span>
-      <h3>Multi-purpose Storage</h3>
-      <p>
-        Can be designed to organize lightweight items
-        in homes, classrooms and workspaces.
-      </p>
-    </div>
-
-    <div class="material">
-      <span>🌱</span>
-      <h3>Eco-conscious Design</h3>
-      <p>
-        Encourages material reuse and helps reduce
-        dependence on newly manufactured furniture materials.
-      </p>
-    </div>
-
   </div>
 </section>
 
 <!-- GALLERY -->
 
-<section id="gallery">
-  <h2 class="section-heading">Project Gallery</h2>
+<section class="section gallery-section" id="gallery">
+  <div class="container">
 
-  <p class="intro">
-    Photographs of our sustainable furniture project
-    and design concepts.
-  </p>
+    <div class="center">
+      <div class="eyebrow">PROJECT PHOTOGRAPHS</div>
+      <h2 class="section-title">Our Project Gallery</h2>
 
-  <div class="grid">
-
-    <div class="card">
-      <img src="furniture1.jpeg"
-           alt="Sustainable furniture project photo">
-      <h3>Project Photograph 1</h3>
-      <p>Our sustainable furniture concept.</p>
+      <p class="section-intro">
+        A visual presentation of our furniture design
+        and project development.
+      </p>
     </div>
 
-    <div class="card">
-      <img src="furniture2.jpeg"
-           alt="Foldable cardboard furniture project photo">
-      <h3>Project Photograph 2</h3>
-      <p>Exploring reusable furniture design.</p>
-    </div>
+    <div class="gallery">
 
+      <div class="gallery-card">
+        <img src="furniture1.jpeg" alt="GREENCRAFT project photo one">
+        <div>
+          <h3>Project Photograph 01</h3>
+          <p>Our sustainable furniture design concept.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="furniture2.jpeg" alt="GREENCRAFT project photo two">
+        <div>
+          <h3>Project Photograph 02</h3>
+          <p>Exploring creative reuse of materials.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- MATERIALS -->
 
-<section class="design" id="materials">
-  <h2 class="section-heading">Materials and Components</h2>
+<section class="section" id="materials">
+  <div class="container">
 
-  <p class="intro">
-    The project focuses on easily available materials
-    and simple manufacturing methods.
-  </p>
+    <div class="center">
+      <div class="eyebrow">RESOURCES AND COMPONENTS</div>
+      <h2 class="section-title">Materials and Tools</h2>
 
-  <div class="grid">
-
-    <div class="material">
-      <span>📦</span>
-      <h3>Hard Cardboard</h3>
-      <p>
-        Reused corrugated cardboard sheets used
-        to develop the main rack structure.
+      <p class="section-intro">
+        The project emphasizes easily available materials
+        and practical manufacturing methods.
       </p>
     </div>
 
-    <div class="material">
-      <span>✂️</span>
-      <h3>Cutting Tools</h3>
-      <p>
-        Suitable cutting tools for preparing
-        cardboard panels and structural parts.
-      </p>
-    </div>
+    <div class="material-grid">
 
-    <div class="material">
-      <span>📏</span>
-      <h3>Measuring Tools</h3>
-      <p>
-        Measuring scales and marking tools
-        for accurate dimensions.
-      </p>
-    </div>
+      <div class="material-card">
+        <div class="icon">📦</div>
+        <h3>Hard Cardboard</h3>
+        <p>Selected discarded corrugated or rigid cardboard sheets.</p>
+      </div>
 
-    <div class="material">
-      <span>🧴</span>
-      <h3>Joining Materials</h3>
-      <p>
-        Suitable adhesive, paper tape or other
-        joining methods selected for the design.
-      </p>
-    </div>
+      <div class="material-card">
+        <div class="icon">📏</div>
+        <h3>Measuring Scale</h3>
+        <p>Used for accurate dimensions and layout marking.</p>
+      </div>
 
-    <div class="material">
-      <span>🎨</span>
-      <h3>Finishing Materials</h3>
-      <p>
-        Recycled paper coverings or suitable
-        finishes for a neat appearance.
-      </p>
-    </div>
+      <div class="material-card">
+        <div class="icon">✂️</div>
+        <h3>Cutting Tools</h3>
+        <p>Used to prepare panels and required components safely.</p>
+      </div>
 
-    <div class="material">
-      <span>🔩</span>
-      <h3>Folding Connections</h3>
-      <p>
-        Designed joints or hinges to support
-        the folding mechanism.
-      </p>
-    </div>
+      <div class="material-card">
+        <div class="icon">🧴</div>
+        <h3>Adhesive</h3>
+        <p>Suitable adhesive for joining selected cardboard components.</p>
+      </div>
 
+      <div class="material-card">
+        <div class="icon">🔩</div>
+        <h3>Joining Elements</h3>
+        <p>Appropriate connectors or reinforced joints for assembly.</p>
+      </div>
+
+      <div class="material-card">
+        <div class="icon">🎨</div>
+        <h3>Finishing Materials</h3>
+        <p>Paper coverings and suitable finishing materials.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <!-- ASSEMBLY -->
 
-<section class="process" id="assembly">
-  <h2 class="section-heading">Manufacturing and Assembly Process</h2>
+<section class="section assembly" id="assembly">
+  <div class="container">
 
-  <p class="intro">
-    The proposed manufacturing process uses a sequence
-    of simple steps to transform discarded cardboard
-    into a functional storage rack.
-  </p>
+    <div class="center">
+      <div class="eyebrow">FROM WASTE TO PRODUCT</div>
+      <h2 class="section-title">Manufacturing and Assembly</h2>
 
-  <div class="grid">
-
-    <div class="step">
-      <div class="step-number">01</div>
-      <h3>Collection of Cardboard</h3>
-      <p>
-        Collect usable hard cardboard from old packaging
-        boxes and discarded materials. Select sheets
-        that are clean, dry and structurally suitable.
+      <p class="section-intro">
+        The proposed manufacturing process follows
+        a sequence of preparation, cutting, joining,
+        folding and inspection.
       </p>
     </div>
 
-    <div class="step">
-      <div class="step-number">02</div>
-      <h3>Measurement and Planning</h3>
-      <p>
-        Decide the required rack dimensions and prepare
-        a layout for shelves, side panels and folding parts.
-      </p>
-    </div>
+    <div class="steps">
 
-    <div class="step">
-      <div class="step-number">03</div>
-      <h3>Cutting and Shaping</h3>
-      <p>
-        Cut cardboard panels according to the design.
-        Prepare folding lines and connecting sections.
-      </p>
-    </div>
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Material Collection</h3>
+        <p>
+          Collect reusable cardboard boxes and sheets.
+          Select dry, clean and undamaged material.
+        </p>
+      </div>
 
-    <div class="step">
-      <div class="step-number">04</div>
-      <h3>Joining Components</h3>
-      <p>
-        Join the prepared panels using appropriate
-        joining techniques and reinforce important
-        structural areas.
-      </p>
-    </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Design and Measurement</h3>
+        <p>
+          Prepare the rack layout and decide the
+          dimensions of its shelves and side panels.
+        </p>
+      </div>
 
-    <div class="step">
-      <div class="step-number">05</div>
-      <h3>Foldable Mechanism</h3>
-      <p>
-        Assemble the folding sections so that the rack
-        can be opened for use and folded for storage.
-      </p>
-    </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Cutting and Preparation</h3>
+        <p>
+          Mark and cut cardboard components according
+          to the planned dimensions.
+        </p>
+      </div>
 
-    <div class="step">
-      <div class="step-number">06</div>
-      <h3>Finishing and Testing</h3>
-      <p>
-        Complete the surface finishing and inspect
-        the rack for stability. Test only with light
-        loads within its verified safe capacity.
-      </p>
-    </div>
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Panel Reinforcement</h3>
+        <p>
+          Strengthen important panels and joints
+          according to the structural design.
+        </p>
+      </div>
 
-  </div>
-</section>
+      <div class="step">
+        <div class="step-number">05</div>
+        <h3>Assembly and Joining</h3>
+        <p>
+          Connect the prepared components to create
+          the main storage rack structure.
+        </p>
+      </div>
 
-<!-- ADVANTAGES -->
+      <div class="step">
+        <div class="step-number">06</div>
+        <h3>Folding Arrangement</h3>
+        <p>
+          Incorporate the planned folding connections
+          and check the opening and closing movement.
+        </p>
+      </div>
 
-<section class="advantages">
-  <h2 class="section-heading">Advantages of Our Project</h2>
+      <div class="step">
+        <div class="step-number">07</div>
+        <h3>Surface Finishing</h3>
+        <p>
+          Apply appropriate surface finishing
+          for a neat and presentable appearance.
+        </p>
+      </div>
 
-  <ul>
-    <li>🌱 Promotes recycling and reuse of old cardboard.</li>
-    <li>♻️ Helps reduce cardboard disposal and material waste.</li>
-    <li>📦 Lightweight compared with many conventional racks.</li>
-    <li>🔄 Foldable design can make storage easier.</li>
-    <li>💰 Uses potentially low-cost and easily available materials.</li>
-    <li>🎨 Can be customized in size, shape and appearance.</li>
-    <li>🏡 Useful as a concept for lightweight storage applications.</li>
-  </ul>
-
-  <p class="intro">
-    <strong>Design consideration:</strong>
-    Cardboard can weaken when exposed to moisture,
-    and its strength depends on thickness, construction
-    and reinforcement. The rack is intended for
-    lightweight objects unless structural testing
-    demonstrates a higher safe capacity.
-  </p>
-</section>
-
-<!-- SOLIDWORKS -->
-
-<section class="model" id="model">
-  <h2 class="section-heading">3D CAD Model and SolidWorks Assembly</h2>
-
-  <p class="intro">
-    Computer-aided design can help visualize the rack,
-    understand its individual components and examine
-    how the folding mechanism is intended to work.
-  </p>
-
-  <div class="model-box">
-    <h3>3D Model Preview</h3>
-
-    <p>
-      Our SolidWorks model and assembly will be
-      presented in this section.
-    </p>
-
-    <p>
-      <strong>3D model coming soon.</strong>
-    </p>
-
-    <p>
-      The interactive model can be added after
-      exporting the SolidWorks design into GLB format
-      and uploading the file to this GitHub repository.
-    </p>
-  </div>
-</section>
-
-<!-- FUTURE SCOPE -->
-
-<section class="future" id="future">
-  <h2 class="section-heading">Future Scope</h2>
-
-  <p class="intro">
-    GREENCRAFT has the potential to develop into
-    a wider range of sustainable furniture products.
-  </p>
-
-  <div class="grid">
-
-    <div class="material">
-      <span>📐</span>
-      <h3>Improved Design</h3>
-      <p>
-        Develop improved folding mechanisms,
-        stronger joints and better structural stability.
-      </p>
-    </div>
-
-    <div class="material">
-      <span>💧</span>
-      <h3>Moisture Protection</h3>
-      <p>
-        Explore suitable protective coatings
-        to improve resistance to moisture.
-      </p>
-    </div>
-
-    <div class="material">
-      <span>🏢</span>
-      <h3>More Furniture Products</h3>
-      <p>
-        Develop cardboard stools, organizers,
-        display stands and other lightweight products.
-      </p>
-    </div>
-
-    <div class="material">
-      <span>💻</span>
-      <h3>Advanced CAD Design</h3>
-      <p>
-        Use SolidWorks to improve component design,
-        folding arrangements and assembly visualization.
-      </p>
-    </div>
-
-    <div class="material">
-      <span>🧪</span>
-      <h3>Strength Testing</h3>
-      <p>
-        Study load capacity, deformation, durability
-        and performance under repeated folding.
-      </p>
-    </div>
-
-    <div class="material">
-      <span>🌍</span>
-      <h3>Environmental Impact</h3>
-      <p>
-        Explore local production and responsible
-        end-of-life recycling.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONCLUSION -->
-
-<section class="conclusion">
-  <h2 class="section-heading">Conclusion</h2>
-
-  <p class="intro">
-    GREENCRAFT demonstrates how creativity and sustainable
-    engineering can give discarded materials a useful
-    second life. By exploring foldable furniture made
-    from reused hard cardboard, the project encourages
-    resource efficiency, innovative design and
-    environmentally responsible thinking.
-  </p>
-
-  <p class="intro">
-    Our vision is simple: turn waste into opportunity
-    and design useful products for a greener tomorrow.
-  </p>
-</section>
-
-<footer>
-  <h3>🌿 GREENCRAFT</h3>
-  <p>Foldable Sustainable Furniture Project</p>
-  <p>Reuse Today. Design Tomorrow. Protect Our Future.</p>
-</footer>
-
-</body>
-</html>
+      <div class="step">
+        <div class="step-number">08</div>
+        <h3>Inspection and Testing</h3>
+        <p>
+          Inspect the structure, folding action,
